@@ -213,18 +213,8 @@ with open('/tmp/file.py') as f:
     d = f.read()
 d = python_minifier.minify(
     d,
-    remove_annotations=True,
-    remove_pass=True,
     remove_literal_statements=True,
-    combine_imports=True,
-    hoist_literals=False,
-    remove_object_base=False,
-    remove_debug=True,
-    remove_asserts=False,
-    rename_locals=True, preserve_locals=None,
-    rename_globals=False, preserve_globals=None,
-    convert_posargs_to_args=True,
-    preserve_shebang=False,
+    hoist_literals=False
 )
 with open('/tmp/file.min.py', 'w') as f:
     f.write(d)
@@ -263,3 +253,4 @@ f.close()
 
     return vm.FS.readFile("/tmp/file.mpy.dis", { encoding: 'utf8' })
 }
+
